@@ -12,6 +12,8 @@ if(env === 'development'){
   process.env.MONGODB_URI = 'mongodb://thelazydev:12349041a@ds035573.mlab.com:35573/todoapp';
 }
 
+
+console.log(process.env.MONGODB_URI);
 var _ = require('lodash');
 
 
