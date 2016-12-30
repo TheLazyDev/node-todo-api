@@ -13,7 +13,7 @@ if(env === 'development'){
 }
 
 
-console.log(process.env.MONGODB_URI);
+
 var _ = require('lodash');
 
 
