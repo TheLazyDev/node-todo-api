@@ -3,61 +3,80 @@ const {SHA256} = require('crypto-js');
 const jwt = require('jsonwebtoken');
 
 
-var data = {
-    id: 10
-};
+const bcrypt = require('bcryptjs');
 
-var token = jwt.sign(data,'123abc');
-
-var decoded = jwt.verify(token,'123abc');
+var pass = "123abc!";
 
 
-console.log('decoded',decoded);
-
-// var msg = "I am user number 3";
-
-
-// var hash = SHA256(msg).toString();
-
+// bcrypt.genSalt(12,(err,salt)=>{
+//     bcrypt.hash(pass,salt,(err,hash)=>{
+//         console.log(hash);
+//     })
+// })
 
 
-// console.log(`Message: ${msg}`);
+var hashedPass = '$2a$12$ZTqMJrrLmrc99n075DKoDefFxzFAiG1ogr.Ba7SF2Qe5KQJ6vXSX.';
 
-// console.log(`Hash: ${hash}`);
-
+bcrypt.compare('12',hashedPass,(err, res)=>{
+    console.log(res);
+})
 
 
 // var data = {
-//     id: 4
+//     id: 10
 // };
 
+// var token = jwt.sign(data,'123abc');
 
-// var token = {
-//     data,
-//     hash: SHA256(JSON.stringify(data) + "somesecret").toString()
-// }
+// var decoded = jwt.verify(token,'123abc');
 
 
+// console.log('decoded',decoded);
+
+// // var msg = "I am user number 3";
 
 
-// token.data.id = 5;
-
-// token.hash = SHA256(JSON.stringify(token.data)).toString();
-
+// // var hash = SHA256(msg).toString();
 
 
 
+// // console.log(`Message: ${msg}`);
 
-// var resultHash = SHA256(JSON.stringify(token.data)+ "somesecret").toString();
+// // console.log(`Hash: ${hash}`);
+
+
+
+// // var data = {
+// //     id: 4
+// // };
+
+
+// // var token = {
+// //     data,
+// //     hash: SHA256(JSON.stringify(data) + "somesecret").toString()
+// // }
 
 
 
 
-// if(resultHash === token.hash){
-//     console.log("Data was not changed");
+// // token.data.id = 5;
 
-// } else {
-//     console.log("Data was changed");
-// }
+// // token.hash = SHA256(JSON.stringify(token.data)).toString();
+
+
+
+
+
+// // var resultHash = SHA256(JSON.stringify(token.data)+ "somesecret").toString();
+
+
+
+
+// // if(resultHash === token.hash){
+// //     console.log("Data was not changed");
+
+// // } else {
+// //     console.log("Data was changed");
+// // }
 
 
