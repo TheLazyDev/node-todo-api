@@ -3,7 +3,7 @@ var env = process.env.NODE_ENV || 'development';
 
 
 
-if(env === 'development' || env === 'test' || env === 'production'){
+if(env === 'development' || env === 'test'){
        
        var config = require('./config.json');
 
@@ -20,6 +20,8 @@ if(env === 'development' || env === 'test' || env === 'production'){
 
 
 
+} else if(env === 'production') {
+  process.env.MONGODB_URI = 'mongodb://thelazydev:12349041a@ds035573.mlab.com:35573/todoapp';
 }
 // console.log('env ****',env);
 // if(env === 'development'){
